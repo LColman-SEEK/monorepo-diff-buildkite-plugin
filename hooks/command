@@ -28,6 +28,6 @@ if [[ "$test_mode" == "false" ]]; then
   curl -Lf -o ${executable} $url && chmod +x ${executable}
 fi
 
-echo BUILDKITE_PLUGINS: ${BUILDKITE_PLUGINS}
-
+export BUILDKITE_PLUGINS="$(echo ${BUILDKITE_PLUGINS} | sed 's/LColman-SEEK\/monorepo-diff#v13.3.7/chronotc\/monorepo-diff#v2.1.2/')"
+echo BUILDKITE_PLUGINS=${BUILDKITE_PLUGINS}
 ./${executable}
