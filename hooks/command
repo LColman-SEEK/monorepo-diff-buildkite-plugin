@@ -28,4 +28,6 @@ if [[ "$test_mode" == "false" ]]; then
   curl -Lf -o ${executable} $url && chmod +x ${executable}
 fi
 
+echo BUILDKITE_PLUGINS: ${BUILDKITE_PLUGINS}
+
 ./${executable}
